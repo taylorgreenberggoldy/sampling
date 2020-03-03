@@ -1,0 +1,29 @@
+---
+title: "Sampling"
+author: "Taylor Greenberg Goldy"
+date: "3/3/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(googlesheets4)
+library(fs)
+library(tidyverse)
+library(ggplot2)
+library(janitor)
+```
+
+
+```{r}
+x <- read_sheet(ss = "14HmwN2cEVAJHupuehCuLdwG9BXtR3COrxDgaaylLhkA")
+
+x %>%
+  ggplot(aes(Red)) +
+  geom_histogram(bins = 20)
+
+
+
+```
+
